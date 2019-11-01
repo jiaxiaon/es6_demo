@@ -71,7 +71,7 @@
     //     console.log(body,method);
     // }
     // fetch('a');
-    // fetchTest('a',{method:"POST"});
+    // fetchTest('a',{method:"POST"}); // 此时不传入第二个参数会报错
 
     // var x = 1;
     // function foo(x, y = function () { x = 2; console.log(x)/* 2 */}) {
@@ -81,6 +81,38 @@
     //     y();
     //     console.log(x); // 2
     // }
-
+    // console.log(x);
     // foo() // 2
+
+    // var x = 1;
+    // function foo (x , y = function () { x = 2; console.log(x)}) {
+    //     console.log(x);
+    //     var x = 3;
+    //     y();
+    //     console.log(x);
+    // }
+    // console.log(x);
+    // foo(x);
+
+
+
+    // let foo = 'outer';
+    // function bar(func = (x) => foo){
+    //     let foo = 'inner';
+    //     console.log(func());
+    // }
+    // bar(tab({a:1,b:2},'a',3));
+    // function bar(func = () => tab(11)){
+    //     let foo = 'inner';
+    //     console.log(func());
+    // }
+    // function tab (...arr) {
+    //     console.log(arr)
+    // }
+    // bar();
+
+    // const str = `abacas123321`;
+    // const arr = [...str,1,2,1];
+    // const newArr = Array.from(new Set(arr));
+    // console.log(arr,newArr)
 </script>
