@@ -1,16 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
 
 <script>
-    
+    // let {a,b} = {a:1};
+    // console.log(a,b)
+    // let {a,b = 2} = {a:1};
+    // console.log(a,b)
+    // let json = {
+    //     0:1,
+    //     1:2,
+    //     length:2,
+    // }
+    // let arr = Array.from(json);
+    // console.log(arr)
+    // new Set()转化出来的是一个json对象
+    // let arr = [1,'1','a','a','a',2,.0,null,undefined,undefined,null];
+    // console.log(new Set(arr),Array.from(new Set(arr)))
+    // let arr = Array.from([1, 2, 3], (value,key) => {
+    //     console.log(value,key);
+    //     return value * value;
+    // });
+    // console.log(arr)
+
+    // const json = {
+    //     a:{
+    //         0:1,
+    //         1:5,
+    //     },
+    //     b(){
+    //         setTimeout(()=>{
+    //             let arr = Array.from([this.a,1],(value,key)=>{
+    //                 return value;
+    //             });
+    //             console.log(arr)
+    //         },100)
+    //     }
+    // }
+    // json.b();
+
+    // let arr = [1,5,13,2,564,1,64];   // find方法类似于filter,不过filter会生成新的数组，find只是找到对应的值
+    // let a = arr.find((value,key,arr)=>{
+    //     return (value*10 == 50);
+    // })
+    // let a = arr.filter((value,key,arr)=>{
+    //     return (value * 10 == 50)
+    // })
+    // console.log(arr,a);
+
+    // let arr = ['a','b','c']; // fill方法不会补充新的元素，只会抹去已有的元素
+    // arr.fill('d',2,4);
+    // console.log(arr);
+
+    // function fetch(url, { body = {}, method = 'GET', headers = {} } = {}) { // 函数参数可以与结构赋值结合使用
+    //     console.log(method);
+    // }
+    // function fetchTest(url, { body = {}, method = 'GET', headers = {} }) {
+    //     console.log(body,method);
+    // }
+    // fetch('a');
+    // fetchTest('a',{method:"POST"});
+
+    // var x = 1;
+    // function foo(x, y = function () { x = 2; console.log(x)/* 2 */}) {
+    //     console.log(x); // undefined
+    //     x = 3;
+    //     console.log(x); // 3
+    //     y();
+    //     console.log(x); // 2
+    // }
+
+    // foo() // 2
 </script>
