@@ -131,10 +131,89 @@
     // const s2 = Symbol('b');
     // console.log(s1,s2);
     
-    // const arr = [1,1,1,1,1,null,1,1,1,1,1,2,5];
+    // const arr = [1,1,1,1,1,null,1,1,1,,1,1,2,5,null,undefined,undefined,,];
     // const arr1 = [2,1,5,null,1];
     // var s = new Set([...arr]);
-    // s.add(arr);
+    // s.add(arr); // 添加某个值
     // s.add(arr1);
-    // console.log(s);
+    // s.delete(10); // 删除某个值，这个值必须在set对象中
+    // s.has(5); // 这个返回一个布尔值，判断当前值是否在set对象中
+    // s.clear(); // 这个方法清除掉set对象
+    // console.log(s,s.size,s.has(5));
+    
+    /**/
+
+    /*  
+        Set结构的实例有四个遍历方法，可以用于遍历成员。
+        keys()：返回键名的遍历器
+        values()：返回键值的遍历器
+        entries()：返回键值对的遍历器
+        forEach()：使用回调函数遍历每个成员 
+    */
+    // function a(){
+    //     return 'red';
+    // }
+    // class testSet {
+    //     constructor (type = 'array') {
+    //         this.state={
+    //             type
+    //         };
+    //     }
+    //     a () {
+    //         return this.state.type;
+    //     }
+    // }
+    // const testNewSet = new testSet({type:'object'});
+    // const testobject = new testSet({});
+    // const testNormal = new testSet();
+    // const testNormal1 = new testSet();
+    // // set对class类进行去重时每个class类都是单独的,但是如果直接调用方法，方法返回的值一样时，则会去重
+    // let set = new Set(['red',1,null,undefined,a(),NaN,NaN,testNewSet.a(),testobject.a(),testNormal.a(),testNormal1.a(),testNewSet,testobject,testNormal,testNormal1])
+    // console.log([...set])
+    // for(let item of set.keys()){ // keys方法与values方法返回的值都是set对象中的元素
+    //     console.log(item);
+    // }
+    // for(let item of set.values()){
+    //     console.log(item);
+    // }
+    // for(let item of set.entries()){ // 返回一个数组，包含set对象的键值与键名
+    //     console.log(item);
+    // }
+
+    /**/
+
+    // let arr = [1,2,3,4,4,2];
+    // let set = new Set([...arr].map(x => { // map循环
+    //     return x+1;
+    // })); /* 这个时候返回一个{} */
+    // let set = new Set([...arr].filter(x => { // es6过滤
+    //     return x-1 == 2 || x-2 ==2;
+    // })) /* 返回{} */
+    // console.log(set);
+    // let a = new Set([1, 2, 3]);
+    // let b = new Set([4, 3, 2]);
+
+    /**/
+
+    // // 并集:两个集合合并
+    // let union = new Set([...a, ...b]);
+    // // Set {1, 2, 3, 4}
+
+    // // 交集:两个集合相交的元素
+    // let intersect = new Set([...a].filter(x => b.has(x)));
+    // // set {2, 3}
+
+    // // 差集:两个集合A与B，A中有的，B中没有
+    // let difference = new Set([...a].filter(x => !b.has(x)));
+    // // Set {1}
+
+    /**/
+
+    // const m = new Map();
+    // let o = {
+    //     p: 'Hellow'
+    // }
+    // m.set(o, 'content');
+    // m.set('o', 'content');
+    // console.log(typeof m,m);
 </script>
