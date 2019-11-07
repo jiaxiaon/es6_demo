@@ -16,7 +16,7 @@ export default {
   methods: {
     listebKeyword (res) {
       console.log(this.inputTest)
-      let a = new RegExp(/[^~!@#$%\^&*+|}{":：<>?\/;''\'w'[\]\\=`}]$/);
+      let a = new RegExp(/[^~!@#$%\^&*+|}{":：<>?\/;''\'w[\]\\=`}]$/)
       if (!a.test(this.inputTest)) {
         console.log('错误')
       }
