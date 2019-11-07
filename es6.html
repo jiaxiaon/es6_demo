@@ -262,29 +262,82 @@
     // })
     // .catch(res => console.log(res))
 
-    var getPromise = function (data) {
-        return new Promise(function(resolve, reject){
-            if(data.state){
-                resolve(data);
-            }else{
-                reject(new Error(data.failText));
-            }
-        })
-    }
-    const data = {
-        state:true,
-        a:1,
-        methods(){
-            console.log(`我是被执行的函数${this.a}`)
-        },
-        failText:'执行失败了'
-    }
-    getPromise(data)
-    .then(res=>{
-        res.methods();
-        res.methods1(); // 当.then函数有地方执行失败的时候会自动转到.catch函数中
-    })
-    .catch(res=>{
-        console.log(res);
-    })
+    // var getPromise = function (data) {
+    //     return new Promise(function(resolve, reject){
+    //         if(data.state){
+    //             resolve(data);
+    //         }else{
+    //             reject(new Error(data.failText));
+    //         }
+    //     })
+    // }
+    // const data = {
+    //     state:false,
+    //     a:1,
+    //     methods(){
+    //         console.log(`我是被执行的函数${this.a}`)
+    //     },
+    //     failText:'执行失败了'
+    // }
+    // getPromise(data)
+    // .then(res=>{
+    //     res.methods();
+    //     res.methods1(); // 当.then函数有地方执行失败的时候会自动转到.catch函数中
+    // })
+    // .catch(res=>{
+    //     console.log(res);
+    // })
+
+    // const someAsyncThing = function () {
+    //     return new Promise(function (resolve, reject) {
+    //         try {
+    //             resolve(x + 2);
+    //         } catch (res) {
+    //             reject(new Error(res.message));
+    //         }
+    //     })
+    // }
+    // someAsyncThing()
+    // .then(() => {
+    //     console.log('everything is great');
+    // })
+    // .catch((res) => {
+    //     console.log(res);
+    // })
+
+    // const data = {
+    //     success: true,
+    //     methods:{
+    //         cdName:'社会摇',
+    //         successFunc(){
+    //             console.log(this.cdName);
+    //         }
+    //     },
+    // }
+    // var p1 = function (data = {}) {
+    //     return　new Promise((resolve, reject) => {
+    //         if(data.success){
+    //             resolve(data);
+    //         }else{
+    //             reject('p1已经失败了');
+    //         }
+    //     })
+    // }
+    // var p2 = function () {
+    //     return new Promise((resolve, reject) => {
+    //         // reject('a');
+    //         resolve('success');
+    //     })
+    // }
+    // Promise.all([p1(data),p2()])  /* all方法会把所有的执行一遍，只要有一个reject，就会终止，否则等全部resolve */
+    // .then(res=>{
+    //     res[0].methods.successFunc();
+    // })
+    // .catch(res => console.log(res))
+    /* Promise.race()方法只要其中有一个状态改变就会终止 */
+
+
+
+    /* */
+    let a = /[^~!@#$%\^&*+|}{":：<>?\/;''\[\]\\=`}]$/
 </script>
