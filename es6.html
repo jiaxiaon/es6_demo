@@ -357,4 +357,26 @@
     // }
     // const hw = hello(); // 直接调用方法是不会返回值的，需要next方法，遇到yield暂停并且返回值，遇到return则直接返回后边不继续执行
     // console.log(hw.next());
+
+    // function * f(){
+    //     yield 'hello';
+    //     console.log('执行');
+    //     yield 'word';
+    //     return 'ending';
+    // }
+    // var a = f();
+    // console.log(a.next(),a.next());
+
+    function* foo(x) {
+        console.log(x);
+        var y = 2 * (yield (x + 1));
+        console.log(y)
+        var z = yield (y / 3);
+        console.log(z)
+        return (x + y + z);
+    }
+    var a = foo(5);
+    console.log(a.next());
+    console.log(a.next(12));
+    // console.log(a.next(30));
 </script>
