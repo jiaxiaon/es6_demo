@@ -367,16 +367,48 @@
     // var a = f();
     // console.log(a.next(),a.next());
 
-    function* foo(x) {
-        console.log(x);
-        var y = 2 * (yield (x + 1));
-        console.log(y)
-        var z = yield (y / 3);
-        console.log(z)
-        return (x + y + z);
-    }
-    var a = foo(5);
-    console.log(a.next());
-    console.log(a.next(12));
+    // function* foo(x) {
+    //     console.log(x);
+    //     var y = 2 * (yield (x + 1));
+    //     console.log(y)
+    //     var z = yield (y / 3);
+    //     console.log(z)
+    //     return (x + y + z);
+    // }
+    // var a = foo(5);
+    // console.log(a.next());
+    // console.log(a.next(12));
     // console.log(a.next(30));
+
+
+    /* ------------------------------------------------------ */
+    // var obj = new Proxy({}, {
+    //     get: function (target, key, receiver) {
+    //         console.log(`getting ${key}!`,target, key, receiver);
+    //         return Reflect.get(target, key, receiver);
+    //     },
+    //     set: function (target, key, value, receiver) {
+    //         console.log(`setting ${key}!`,target, key, value, receiver);
+    //         return Reflect.set(target, key, value, receiver);
+    //     }
+    // });
+    // obj.count = 1;
+    // obj.count++;
+
+
+    let name = 'xx';
+    let age = 9;
+    function tag(strArr, ...args) {
+        var str = '';
+        for (let i = 0; i < args.length; i++) {
+            str += strArr[i] + args[i]
+        }
+        console.log(strArr, args);
+        //[ '', '今年', '岁了' ]   [ 'xx', 9 ]
+        //
+        str += strArr[strArr.length - 1];
+        return str;
+    }
+    let str = tag`${name}今年${age}岁了`;
+    console.log(str);
 </script>

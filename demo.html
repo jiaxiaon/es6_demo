@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    // 冒泡排序及优化
+    // 生成指定个数的随机数组
+    const generateArr = (num = 10) => {
+        let arr = []
+        for (let i = 0; i < num; i++) {
+            let item = Math.floor(Math.random() * (num + 1))
+            arr.push(item)
+        }
+        return arr
+    }
+    // 生成指定个数的元素x轴坐标
+    const generateArrPosX = (n = 10, w = 6, m = 6) => {
+        let pos = []
+        for (let i = 0; i < n; i++) {
+            let item = (w + m) * i
+            pos.push(item)
+        }
+        return pos
+    };
+    bubbleSort = function (arr = []) {
+        let len = arr.length
+        for (let i = 0; i < len; i++) {
+            for (let j = 0; j < len - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // 置换
+                      [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+                }
+            }
+        }
+        return arr
+    }
+// 生成坐标
+const pos = generateArrPosX(60)
+// 生成60个项的数组
+const arr = generateArr(60)
+bubbleSort(arr)
+</script>
