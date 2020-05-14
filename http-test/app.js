@@ -14,7 +14,7 @@ const http = require('http');
 // POST请求
 const server = http.createServer((req, res) => {
     // req是浏览器向服务器发送什么请求，res是服务器返回什么
-    if (req.method === 'post') {
+    if (req.method === 'POST') {
         console.log('content-type', req.headers['content-type']); // req数据
         let postData = "";
         req.on('data', chunk => { // 默认是二进制
