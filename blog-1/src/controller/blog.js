@@ -33,9 +33,17 @@ const newBlog = (blogData = {}) => {
 const upteBlogData = (updateData = {}) => {
     return blogData
 }
+const delBlog = (delData) => {
+    if (delData.id) {
+        return delData
+    } else {
+        return false
+    }
+}
 module.exports = {
     getList,
     getDetail,
     newBlog,
-    upteBlogData
+    upteBlogData,
+    delBlog
 }
