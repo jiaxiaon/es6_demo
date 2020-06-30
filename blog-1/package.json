@@ -1,18 +1,24 @@
 {
   "name": "blog-1",
   "version": "1.0.0",
-  "description": "",
   "main": "bin/www.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "corss-env NODE_ENV=DEV NODEMON ./BIND/WWW.JS",
-    "PRD": "corss-env NODE_ENV=PRODUCTION NODEMON ./BIND/WWW.JS"
+    "dev": "corss-env NODE_ENV=dev nodemon ./bin/www.js",
+    "prd": "corss-env NODE_ENV=production nodemon ./bin/www.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cross-env": "^7.0.2",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.4"
-  }
+  },
+  "bin": {
+    "blog-1": "www.js"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2"
+  },
+  "description": ""
 }

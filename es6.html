@@ -396,19 +396,30 @@
     // obj.count++;
 
 
-    let name = 'xx';
-    let age = 9;
-    function tag(strArr, ...args) {
-        var str = '';
-        for (let i = 0; i < args.length; i++) {
-            str += strArr[i] + args[i]
-        }
-        console.log(strArr, args);
-        //[ '', '今年', '岁了' ]   [ 'xx', 9 ]
-        //
-        str += strArr[strArr.length - 1];
-        return str;
-    }
-    let str = tag`${name}今年${age}岁了`;
-    console.log(str);
+    // let name = 'xx';
+    // let age = 9;
+    // function tag(strArr, ...args) {
+    //     var str = '';
+    //     for (let i = 0; i < args.length; i++) {
+    //         str += strArr[i] + args[i]
+    //     }
+    //     console.log(strArr, args);
+    //     //[ '', '今年', '岁了' ]   [ 'xx', 9 ]
+    //     //
+    //     str += strArr[strArr.length - 1];
+    //     return str;
+    // }
+    // let str = tag`${name}今年${age}岁了`;
+    // console.log(str);
+
+
+    // fill
+    // const arr = new Array(100).fill(0).map((item, index) => index + 1)
+
+    // Array.from() 评论区大佬指出
+    // const arr = Array.from(Array(100), (v, k) => k + 1)
+
+    // // Array.from() + array.keys() 评论区大佬指出
+    const arr = [...Array(100).keys()] 
+    console.log(arr)
 </script>
