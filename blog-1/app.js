@@ -1,7 +1,6 @@
 const querystring = require('querystring'); // nodejs提供的原生模块
 const handBlogRouter = require('./src/router/blog');
 const handUserRouter = require('./src/router/user');
-const mysql = require('mysql');
 
 const getPostData = (req) => {
     const promise = new Promise((resolve, reject) => {
