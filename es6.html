@@ -424,15 +424,20 @@
     // console.log(arr)
 
 
-    function eqalArrs(a, b) {
-        if(a.length !== b.length) return false;
-        for(var i = 0;i < a.length; i++) {
-            if(a[i] !== b[i]) return false
-        }
-        return true;
-    }
-    const arr = [{a: 1,b: 2},3,'aaa'];
-    const arr1 = [{a: 1,b: 2},3,'aaa'];
-    console.log(eqalArrs(arr, arr1))
+    // function eqalArrs(a, b) {
+    //     if(a.length !== b.length) return false;
+    //     for(var i = 0;i < a.length; i++) {
+    //         if(a[i] !== b[i]) return false
+    //     }
+    //     return true;
+    // }
+    // const arr = [{a: 1,b: 2},3,'aaa'];
+    // const arr1 = [{a: 1,b: 2},3,'aaa'];
+    // console.log(eqalArrs(arr, arr1))
+    var n = 17;
+    var binary_string = n.toString(2);
+    var octal_string = 'O'+n.toString(8);
+    var hex_string = "Ox" + n.toString(16);
+    console.log(binary_string,octal_string,hex_string,n.toString())
     
 </script>
