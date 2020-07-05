@@ -420,6 +420,19 @@
     // const arr = Array.from(Array(100), (v, k) => k + 1)
 
     // // Array.from() + array.keys() 评论区大佬指出
-    const arr = [...Array(100).keys()] 
-    console.log(arr)
+    // const arr = [...Array(100).keys()] 
+    // console.log(arr)
+
+
+    function eqalArrs(a, b) {
+        if(a.length !== b.length) return false;
+        for(var i = 0;i < a.length; i++) {
+            if(a[i] !== b[i]) return false
+        }
+        return true;
+    }
+    const arr = [{a: 1,b: 2},3,'aaa'];
+    const arr1 = [{a: 1,b: 2},3,'aaa'];
+    console.log(eqalArrs(arr, arr1))
+    
 </script>
