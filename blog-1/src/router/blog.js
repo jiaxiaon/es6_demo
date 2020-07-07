@@ -53,14 +53,14 @@ const handleBlogRouter = (req, res) => {
     }
     // 删除一篇博客
     if (method === 'POST' && req.path === '/api/blog/del') {
-        const delBlogData = req.body;
-        console.log(delBlogData)
-        const result = delBlog(delBlogData)
-        if (result) {
-            return new SuccessModel(result)
-        } else {
-            return new ErrorModel('删除博客失败');
-        }
+        const result = upteBlogData(req.body);
+        return result.then(val => {
+            if(val) {
+                return new SuccessModel(val)
+            } else {
+                return new ErrorModel(val);
+            }
+        })
     }
 }
 module.exports = handleBlogRouter;

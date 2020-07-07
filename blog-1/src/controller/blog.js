@@ -38,22 +38,29 @@ const upteBlogData = (blogData = {}) => {
     const title = blogData.title;
     const content = blogData.content;
     const sql = `
-        update blogs set titile='${title}', content='${content}' where id=${blogData.id}
+        update blogs set title='${title}', content='${content}' where id=${blogData.id}
     `
     return exec(sql).then(updateData => {
-        console.log(updateData);
+        // console.log(updateData);
         if(updateData.affectedRows > 0) {
             return true
         }
         return false
     })
 }
-const delBlog = (delData) => {
-    if (delData.id) {
-        return delData
-    } else {
+const delBlog = (blogData = {}) => {
+    // const sql = `
+    //     delete from blogs where id=${blogData.id} and author='${blogData.author}';
+    // `
+    const sql = `
+        update blogs set state=0 where id=${blogData.id} and author='${blogData.author}
+    `
+    return exec(sql).then(delData => {
+        if(delData.affectedRows > 0) {
+            return true
+        }
         return false
-    }
+    })
 }
 module.exports = {
     getList,
