@@ -434,10 +434,19 @@
     // const arr = [{a: 1,b: 2},3,'aaa'];
     // const arr1 = [{a: 1,b: 2},3,'aaa'];
     // console.log(eqalArrs(arr, arr1))
-    var n = 17;
-    var binary_string = n.toString(2);
-    var octal_string = 'O'+n.toString(8);
-    var hex_string = "Ox" + n.toString(16);
-    console.log(binary_string,octal_string,hex_string,n.toString())
+    // var n = 17;
+    // var binary_string = n.toString(2);
+    // var octal_string = 'O'+n.toString(8);
+    // var hex_string = "Ox" + n.toString(16);
+    // console.log(binary_string,octal_string,hex_string,n.toString())
+    let a = 1;
+    const json_ = {
+        a
+    }
+    const json_1 = {
+        a
+    }
+    const json_2 = json_;
+    console.log(json_ === json_1,json_ === json_2,a==json_)
     
 </script>
