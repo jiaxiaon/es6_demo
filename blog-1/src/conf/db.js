@@ -15,7 +15,7 @@ if (env === 'dev') {
 
 if (env === 'production') {
     MYSQL_CONF = {
-        host: 'localhost',  // 如果为线上即为线上地址
+        host: '47.98.134.187',  // 如果为线上即为线上地址
         user: 'root', // 账号
         password: 'jxn199711.', // 密码
         port: '3308', // 安装时候的端口
