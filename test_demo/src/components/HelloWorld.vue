@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import getAxios from '../../utils/request'
 export default {
   name: 'HelloWorld',
   data () {
@@ -15,6 +16,7 @@ export default {
   },
   methods: {
     listebKeyword (res) {
+      getAxios();
       console.log(this.inputTest)
       let a = new RegExp(/[^~!@#$%\^&*+|}{":：<>?\/;''\'w[\]\\=`}]$/)
       if (!a.test(this.inputTest)) {
