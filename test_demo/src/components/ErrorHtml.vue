@@ -1,7 +1,6 @@
 <template>
     <div>
         <p>404</p>
-        <p>403</p>
     </div>
 </template>
 
