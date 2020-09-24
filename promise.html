@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+
+</html>
+
+<script>
+    // Promise 中只有涉及到状态变更后才需要被执行的回调才算是微任务
+    // 链式调用中，只有前一个 then 的回调执行完毕后，跟着的 then 中的回调才会被加入至微任务队列。
+    /* 初级 */
+    // let p = new Promise((resolve, reject) => {
+    //     resolve();
+    // })
+    // p.then(data => {
+    //     console.log('aaa')
+    //     Promise.resolve().then(() => {
+    //         console.log('bbb')
+    //     })
+    // }).then(() => {
+    //     console.log('ccc')
+    // })
+    /* 初级 */
+
+
+    /* 中级 */
+
+    // let p = Promise.resolve();
+    // p.then(data => {
+    //     console.log('aaa')
+    //     Promise.resolve().then(() => {
+    //         console.log('bbb')
+    //     })
+    // }).then(() => {
+    //     console.log('ccc')
+    // })
+    // p.then(data => {
+    //     console.log('ddd')
+    // })
+    /* --------------------- 分割线 ----------------------- */
+    // let p = Promise.resolve().then(() => {
+    //     console.log("then1");
+    //     Promise.resolve().then(() => {
+    //         console.log("then1-1");
+    //     });
+    // }).then(() => {
+    //     console.log("then2");
+    // });
+
+    // p.then(() => {
+    //     console.log("then3");
+    // });
+    const promise = new Promise((resolve, reject) => {
+        console.log(1)
+        resolve();
+        console.log(2)
+    })
+    promise.then(() => {
+        console.log(3)
+        setTimeout(function(){
+            console.log(4)
+        },0)
+    })
+    setTimeout(function(){
+        console.log(6)
+    },0)
+    console.log(5)
+
+    /* 中级 */
+    /* 高级 */
+
+    /* 高级 */
+</script>
