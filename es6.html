@@ -484,4 +484,36 @@
     // var a = fun(0); a.fun(1); a.fun(2); a.fun(3);
     // var b = fun(0).fun(1).fun(2).fun(3);
     // var c = fun(0).fun(1); c.fun(2); c.fun(3);
+
+    // function f() { }
+    // const a = f.prototype, b = Object.getPrototypeOf(f)
+    // console.log(a === b);
+
+    // const person = { name: "yideng" };
+    // function sayHi(age) {
+    //     return `${this.name} is ${age}`;
+    // }
+    // console.log(sayHi.call(person, 3));
+    // // console.log(sayHi.bind(person, 5));
+    // let say = sayHi.bind(person, 5)
+    // console.log(say())
+
+    var a = 1;
+    (function a() {
+        a = 2;
+        console.log(a);
+    })();
+    var bar = 1
+    var foo = {
+        a: function () {
+            return this.bar
+        },
+        bar: 2,
+        b:() => {
+            return this.bar
+        }
+    }
+    var c = foo.a()
+    var d = foo.b()
+    console.log(c,d)
 </script>
