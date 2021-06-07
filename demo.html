@@ -9,37 +9,101 @@
     <script type="text/javascript" src='https://unpkg.com/vuex@3.0.1/dist/vuex.js'></script>
 </head>
 
+<style>
+    body {
+        min-width: 550px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    #header,
+    #footer {
+        background: rgba(29, 27, 27, 0.726);
+        text-align: center;
+        height: 60px;
+        line-height: 60px;
+    }
+
+    #container {
+        overflow: hidden;
+    }
+
+    .column {
+        text-align: center;
+        height: 300px;
+        line-height: 300px;
+    }
+
+    #left,
+    #right,
+    #center {
+        float: left;
+    }
+
+    #center {
+        width: 100%;
+        background: rgb(206, 201, 201);
+    }
+
+    #left {
+        width: 200px;
+        margin-left: -100%;
+        background: rgba(95, 179, 235, 0.972);
+    }
+
+    #right {
+        width: 150px;
+        margin-left: -150px;
+        background: rgb(231, 105, 2);
+    }
+
+    .content {
+        margin: 0 150px 0 200px;
+    }
+</style>
+
 <body>
     <div id="app"></div>
+    <div id="header">#header</div>
+
+    <div id="container">
+        <div id="center" class="column">
+            <div class="content">#center</div>
+        </div>
+        <div id="left" class="column">#left</div>
+        <div id="right" class="column">#right</div>
+    </div>
+
+    <div id="footer">#footer</div>
 </body>
 
 </html>
 
 <script>
     // 生成指定个数的随机数组
-    const generateArr = (num = 10) => {
-        let arr = []
-        for (let i = 0; i < num; i++) {
-            let item = Math.floor(Math.random() * (num + 1))
-            arr.push(item)
-        }
-        return arr
-    }
-    // 冒泡排序及优化
-    function bSort(arr) {
-        var len = arr.length;
-        for (var i = 0; i < len - 1; i++) {
-            for (var j = 0; j < len - 1 - i; j++) {
-                // 相邻元素两两对比，元素交换，大的元素交换到后面
-                if (arr[j] > arr[j + 1]) {
-                    var temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-            }
-        }
-        return arr;
-    }
+    // const generateArr = (num = 10) => {
+    //     let arr = []
+    //     for (let i = 0; i < num; i++) {
+    //         let item = Math.floor(Math.random() * (num + 1))
+    //         arr.push(item)
+    //     }
+    //     return arr
+    // }
+    // // 冒泡排序及优化
+    // function bSort(arr) {
+    //     var len = arr.length;
+    //     for (var i = 0; i < len - 1; i++) {
+    //         for (var j = 0; j < len - 1 - i; j++) {
+    //             // 相邻元素两两对比，元素交换，大的元素交换到后面
+    //             if (arr[j] > arr[j + 1]) {
+    //                 var temp = arr[j];
+    //                 arr[j] = arr[j + 1];
+    //                 arr[j + 1] = temp;
+    //             }
+    //         }
+    //     }
+    //     return arr;
+    // }
     // // 生成指定个数的元素x轴坐标
     // const generateArrPosX = (n = 10, w = 6, m = 6) => {
     //     let pos = []
@@ -137,16 +201,16 @@
     // for(let stuff of box) {
     //     console.log(stuff)
     // }
-    function aa(str) {
-        return new Promise((resolve, reject) => {
-            setTimeout(resolve(str), 10);
-        })
-    }
-    aa('foo').then(res => {
-        return aa(res+'bar')
-    }).then(res => {
-        return aa(res +'baz')
-    }).then(res => {
-        console.log(res)
-    })
+    // function aa(str) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(resolve(str), 10);
+    //     })
+    // }
+    // aa('foo').then(res => {
+    //     return aa(res + 'bar')
+    // }).then(res => {
+    //     return aa(res + 'baz')
+    // }).then(res => {
+    //     console.log(res)
+    // })
 </script>
