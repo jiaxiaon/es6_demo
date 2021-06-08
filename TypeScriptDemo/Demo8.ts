@@ -7,11 +7,14 @@ class Lady {
 const goddess = new Lady();
 console.log(goddess.sayLaLaLa())
 
-class XiaoJieJie extends Lady {
+class XiaoJieJie1 extends Lady {
     sayLove() {
       return "I love you";
     }
+    sayLaLaLa() {
+      return super.sayLaLaLa() + "。你好！"
+    }
 }
-const goddess1 = new XiaoJieJie();
+const goddess1 = new XiaoJieJie1();
 console.log(goddess1.sayLaLaLa());
 console.log(goddess1.sayLove());

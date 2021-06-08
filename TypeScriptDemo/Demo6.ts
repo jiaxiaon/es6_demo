@@ -11,6 +11,10 @@ const testGirl: Public = {
     age: 18,
     bust: 94,
     waistline: 21,
+    propname: {
+      a: 1,
+      b: 2
+    },
     sex: "女",
     say() {
         return '欢迎光临，红浪漫洗浴！！'
