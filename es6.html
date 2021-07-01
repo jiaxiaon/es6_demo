@@ -7,14 +7,100 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        height: 600px;
+        display: flex;
+    }
+
+    .main {
+        background: red;
+        flex-grow: 1;
+    }
+
+    .sub {
+        background: blue;
+        flex: 0 0 150px;
+        order: -1;
+    }
+
+    .extra {
+        background: yellow;
+        flex: 0 0 200px;
+        order: 1;
+
+    }
+</style>
 
 <body>
-
+    <div class="container">
+        <div class="main">中间</div>
+        <div class="sub">左侧</div>
+        <div class="extra">右侧</div>
+    </div>
 </body>
 
 </html>
 
 <script>
+    class Fibonacci {
+        constructor(index) {
+            this.index = index;
+        }
+
+        /**
+         * 自下往上实现
+         * 实现思路：
+         *   1. 根据f(0)和f(1)算出f(2)
+         *   2. 再根据f(1)和F(2)算出f(3)
+         *   3. 以此类推算出第n项
+         * 时间复杂度分析：它从第0项遍历到最后一项，因此时间复杂度为O(n)
+        */
+        bottomUp() {
+            const result = [0, 1];
+            if (this.index < 2) {
+                return result[this.index];
+            }
+
+            // f(n - 1)
+            let fibNMinusOne = 1;
+            // f(n - 2)
+            let fibNMinusTwo = 0;
+            let fibN = 0;
+            for (let i = 2; i <= this.index; ++i) {
+                // f(n) = f(n - 1) + f(n - 2)
+                fibN = fibNMinusOne + fibNMinusTwo;
+
+                // f(n - 2) = f(n - 1)
+                fibNMinusTwo = fibNMinusOne;
+                // f(n - 1) = f(n)
+                fibNMinusOne = fibN;
+            }
+            return fibN;
+        }
+    }
+    function bttomUp(num) {
+        let endNUm = 0
+        const result = [0, 1];
+        if (num < 2) {
+            return result[num];
+        }
+        let minNum = 0
+        let maxNum = 1
+        for (let i = 2; i <= num; ++i) {
+            endNUm = minNum + maxNum
+            minNum = maxNum
+            maxNum = endNUm
+        }
+        return endNUm
+    }
+    const fibonacciTest = new Fibonacci(10);
+    console.log(bttomUp(10), '----', fibonacciTest.bottomUp())
     // var arr = [1,[[2,3],4],5];
     // arr.map((value,key)=>{
     //     console.log(value,key)
@@ -503,17 +589,17 @@
         a = 2;
         console.log(a);
     })();
-    var bar = 1
-    var foo = {
-        a: function () {
-            return this.bar
-        },
-        bar: 2,
-        b:() => {
-            return this.bar
-        }
-    }
-    var c = foo.a()
-    var d = foo.b()
-    console.log(c,d)
+    // var bar = 1
+    // var foo = {
+    //     a: function () {
+    //         return this.bar
+    //     },
+    //     bar: 2,
+    //     b: () => {
+    //         return this.bar
+    //     }
+    // }
+    // var c = foo.a()
+    // var d = foo.b()
+    // console.log(c, d)
 </script>
